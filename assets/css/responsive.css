@@ -1,0 +1,69 @@
+/* ============================================================
+   responsive.css — ajustes para pantallas pequeñas
+   ============================================================ */
+
+/* --- Tablet --- */
+@media (max-width: 860px) {
+  .section {
+    --section-pad: 60px;
+  }
+
+  .hero {
+    padding: 72px 0 60px;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .panel {
+    padding: 36px 24px;
+  }
+}
+
+/* --- Móvil --- */
+@media (max-width: 600px) {
+  h1 { font-size: 2.2rem; }
+  h2 { font-size: 1.5rem; }
+
+  .hero {
+    padding: 56px 0 48px;
+  }
+
+  .hero-title {
+    font-size: 2.6rem;
+  }
+
+  .hero-tagline {
+    font-size: 1.1rem;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* En móvil la barra de enlaces se desliza horizontalmente */
+  .navbar-links {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: var(--navbar-h);
+    background: rgba(13, 15, 20, 0.95);
+    border-bottom: 1px solid var(--border);
+    padding: 8px 16px;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mini-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="meta.title">MoonLit — Grabador de clips local-first para Windows</title>
+  <meta name="description" data-i18n="meta.description" content="MoonLit es un grabador de clips local-first para Windows x64 basado en OBS Studio. Inspirado en la idea de Medal.tv, pero de código abierto y 100% local: sin cuentas, sin nube, sin streaming.">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+  <!-- ============ NAVBAR ============ -->
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <a href="#hero" class="navbar-brand">Moon<span class="brand-accent">Lit</span></a>
+      <nav class="navbar-links" id="navbar-links" aria-label="Menú">
+        <a href="#features" data-i18n="nav.features">Características</a>
+        <a href="#inspiration" data-i18n="nav.inspiration">Inspiración</a>
+        <a href="#requirements" data-i18n="nav.requirements">Requisitos</a>
+        <a href="#install" data-i18n="nav.install">Instalación</a>
+        <a href="#usage" data-i18n="nav.usage">Uso</a>
+        <a href="#data" data-i18n="nav.data">Datos</a>
+        <a href="#build" data-i18n="nav.build">Compilar</a>
+        <a href="#docs" data-i18n="nav.docs">Docs y licencia</a>
+      </nav>
+      <div class="lang-switch" role="group" data-i18n-aria="lang.switch" aria-label="Idioma">
+        <button class="lang-btn" data-lang="es" data-i18n-aria="lang.es" aria-label="Español">ES</button>
+        <button class="lang-btn" data-lang="en" data-i18n-aria="lang.en" aria-label="English">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ HERO ============ -->
+    <section id="hero" class="hero">
+      <div class="container hero-inner">
+        <div class="hero-badges">
+          <span class="hero-badge" data-i18n="hero.badge">Basado en OBS Studio 32.2.1</span>
+          <span class="hero-badge" data-i18n="hero.linux-note">Versión para Linux próximamente</span>
+        </div>
+        <h1 class="hero-title">Moon<span class="brand-accent">Lit</span></h1>
+        <p class="hero-tagline" data-i18n="hero.tagline">Grabador de clips local-first para Windows x64</p>
+        <p class="hero-description" data-i18n="hero.description">Captura tus partidas, mantén una librería local con búsqueda y exporta clips recortados. MoonLit se inspira en la idea de Medal.tv: como Office y LibreOffice, es un programa similar, pero de código abierto y 100% local — sin cuentas, sin nube, sin streaming.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://github.com/SourisCG/MoonLit/releases" target="_blank" rel="noopener" data-i18n="hero.installer">Descargar instalador</a>
+          <a class="btn btn-secondary" href="https://github.com/SourisCG/MoonLit/releases" target="_blank" rel="noopener" data-i18n="hero.portable">Descargar portable</a>
+        </div>
+        <p class="hero-note" data-i18n="hero.releases">Las descargas se publican en la página de Releases.</p>
+      </div>
+    </section>
+
+    <!-- ============ CARACTERÍSTICAS ============ -->
+    <section id="features" class="section">
+      <div class="container">
+        <h2 class="section-title" data-i18n="features.title">Características</h2>
+        <p class="section-subtitle" data-i18n="features.subtitle">Todo lo que necesitas para capturar y conservar tus mejores momentos, en tu propia máquina.</p>
+        <div class="cards-grid">
+          <article class="card">
+            <h3 class="card-title" data-i18n="features.detection.title">Detección y captura de juego</h3>
+            <p class="card-text" data-i18n="features.detection.text">Detección automática del objetivo con Windows Graphics Capture (WGC), escudo de privacidad al perder el foco y respaldo seguro DXGI. Sin hooks, sin inyección y sin cámara virtual.</p>
+          </article>
+          <article class="card">
+            <h3 class="card-title" data-i18n="features.buffer.title">Replay buffer</h3>
+            <p class="card-text" data-i18n="features.buffer.text">Clips MKV con cuatro pistas de audio (mixto, juego, micrófono y chat). Guarda un clip con F8 desde dentro del juego, con señal sonora, o desde el dashboard y la bandeja.</p>
+          </article>
+          <article class="card">
+            <h3 class="card-title" data-i18n="features.library.title">Librería local</h3>
+            <p class="card-text" data-i18n="features.library.text">SQLite con búsqueda FTS5, miniaturas y filtros (Todos, Disponibles, Faltantes). Importa archivos externos, abre en el Explorador, borra a la papelera y reconcilia al inicio.</p>
+          </article>
+          <article class="card">
+            <h3 class="card-title" data-i18n="features.editor.title">Editor de clips</h3>
+            <p class="card-text" data-i18n="features.editor.text">Vista previa con tira de frames y búsqueda, mangos de recorte arrastrables, silenciar y ganancia. Exportación MP4 alineada a keyframes en segundo plano, con progreso, cancelación y verificación de duración.</p>
+          </article>
+          <article class="card">
+            <h3 class="card-title" data-i18n="features.audio.title">Audio</h3>
+            <p class="card-text" data-i18n="features.audio.text">Audio de escritorio, micrófono y chat con mixer compacto (volumen y mute por fuente) y menús de selección de dispositivos. Supresión de ruido estilo Krisp (RNNoise + noise gate) en el micrófono.</p>
+          </article>
+          <article class="card">
+            <h3 class="card-title" data-i18n="features.tray.title">Bandeja y arranque</h3>
+            <p class="card-text" data-i18n="features.tray.text">Cerrar a bandeja, minimizar a bandeja y arranque al iniciar sesión con --minimize-to-tray. Marca MoonLit en toda la aplicación.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ INSPIRACIÓN ============ -->
+    <section id="inspiration" class="section">
+      <div class="container">
+        <div class="panel">
+          <h2 class="section-title" data-i18n="inspiration.title">Inspirado en la idea de Medal.tv</h2>
+          <p class="panel-text" data-i18n="inspiration.text">Medal.tv popularizó la idea de guardar clips de tus partidas con un solo toque. MoonLit toma esa misma idea y la convierte en un programa similar de código abierto: como Office y LibreOffice, misma idea, filosofía distinta.</p>
+          <div class="mini-grid">
+            <div class="mini-item">
+              <span class="mini-dot"></span>
+              <div>
+                <h3 class="mini-title" data-i18n="inspiration.local.title">100% local</h3>
+                <p class="mini-text" data-i18n="inspiration.local.text">Tus clips viven en tu disco, no en una nube.</p>
+              </div>
+            </div>
+            <div class="mini-item">
+              <span class="mini-dot"></span>
+              <div>
+                <h3 class="mini-title" data-i18n="inspiration.opensource.title">Código abierto</h3>
+                <p class="mini-text" data-i18n="inspiration.opensource.text">Software libre bajo GPL v2, basado en OBS Studio.</p>
+              </div>
+            </div>
+            <div class="mini-item">
+              <span class="mini-dot"></span>
+              <div>
+                <h3 class="mini-title" data-i18n="inspiration.nocloud.title">Sin cuentas</h3>
+                <p class="mini-text" data-i18n="inspiration.nocloud.text">Sin registro, sin inicio de sesión y sin telemetría.</p>
+              </div>
+            </div>
+            <div class="mini-item">
+              <span class="mini-dot"></span>
+              <div>
+                <h3 class="mini-title" data-i18n="inspiration.private.title">Privado por defecto</h3>
+                <p class="mini-text" data-i18n="inspiration.private.text">Nada se comparte salvo que tú lo exportes a mano.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ REQUISITOS ============ -->
+    <section id="requirements" class="section">
+      <div class="container">
+        <h2 class="section-title" data-i18n="requirements.title">Requisitos</h2>
+        <ul class="checklist">
+          <li data-i18n="requirements.item1">Windows 10 build 19041 o posterior, x64.</li>
+          <li data-i18n="requirements.item2">Una GPU compatible con encoders de hardware (NVENC, QSV o AMF); x264 es el respaldo por software.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ INSTALACIÓN ============ -->
+    <section id="install" class="section">
+      <div class="container">
+        <h2 class="section-title" data-i18n="install.title">Instalación</h2>
+        <p class="section-subtitle" data-i18n="install.subtitle">Dos opciones (ver la última release en GitHub Releases):</p>
+        <div class="cards-grid">
+          <article class="card">
+            <h3 class="card-title" data-i18n="install.setup.title">Instalador (MoonLit-*-Setup.exe)</h3>
+            <p class="card-text" data-i18n="install.setup.text">Instalación NSIS por usuario, sin administrador. Instala en %LOCALAPPDATA%\Programs\MoonLit. Al desinstalar se conservan tus clips, base de datos y configuración.</p>
+          </article>
+          <article class="card">
+            <h3 class="card-title" data-i18n="install.portable.title">Portable (MoonLit-*-x64.zip)</h3>
+            <p class="card-text" data-i18n="install.portable.text">Extrae en cualquier lugar y ejecuta bin\64bit\MoonLit.exe. Un marcador portable_mode mantiene configuración y datos (config/ y MoonLitData/) junto al ZIP extraído.</p>
+          </article>
+        </div>
+        <div class="note-box" data-i18n="install.signing">Firma: los binarios están firmados con el certificado autofirmado "MoonLit Development". En máquinas distintas a la de compilación, instala el certificado en Trusted Root/Trusted Publisher (ver docs/moonlit/MANUAL_MATRIX.md) o SmartScreen mostrará el aviso "Publicador desconocido".</div>
+      </div>
+    </section>
+
+    <!-- ============ USO ============ -->
+    <section id="usage" class="section">
+      <div class="container">
+        <h2 class="section-title" data-i18n="usage.title">Uso</h2>
+        <div class="mini-grid">
+          <div class="mini-item">
+            <span class="mini-dot"></span>
+            <div>
+              <h3 class="mini-title" data-i18n="usage.dashboard.title">Dashboard</h3>
+              <p class="mini-text" data-i18n="usage.dashboard.text">Gran botón para iniciar o detener el replay buffer. "Guardar clip" guarda los últimos N segundos y los clips recientes abren la librería.</p>
+            </div>
+          </div>
+          <div class="mini-item">
+            <span class="mini-dot"></span>
+            <div>
+              <h3 class="mini-title" data-i18n="usage.f8.title">F8</h3>
+              <p class="mini-text" data-i18n="usage.f8.text">Guarda un clip desde dentro del juego, solo cuando el replay buffer está activo.</p>
+            </div>
+          </div>
+          <div class="mini-item">
+            <span class="mini-dot"></span>
+            <div>
+              <h3 class="mini-title" data-i18n="usage.library.title">Librería</h3>
+              <p class="mini-text" data-i18n="usage.library.text">Cuadrícula de miniaturas con búsqueda y filtros. Selecciona un clip para abrir el editor (vista previa, recorte, mute y ganancia) y exportar MP4.</p>
+            </div>
+          </div>
+          <div class="mini-item">
+            <span class="mini-dot"></span>
+            <div>
+              <h3 class="mini-title" data-i18n="usage.settings.title">Ajustes</h3>
+              <p class="mini-text" data-i18n="usage.settings.text">Encoder (todos los codecs OBS registrados), longitud del replay, pistas de audio, carpeta de grabación, dispositivos, ejecutable de chat, supresión de ruido, sonido de clip y arranque con el sistema.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ UBICACIÓN DE DATOS ============ -->
+    <section id="data" class="section">
+      <div class="container">
+        <h2 class="section-title" data-i18n="data.title">Ubicación de datos</h2>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th data-i18n="data.scope">Ámbito</th>
+                <th data-i18n="data.location">Ubicación</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-i18n="data.clips">Clips (MKV)</td>
+                <td><code>%LOCALAPPDATA%\MoonLit\clips</code></td>
+              </tr>
+              <tr>
+                <td data-i18n="data.db">Base de datos</td>
+                <td><code>%LOCALAPPDATA%\MoonLit\MoonLit.db</code></td>
+              </tr>
+              <tr>
+                <td data-i18n="data.exports">Exportaciones (MP4)</td>
+                <td><code>%LOCALAPPDATA%\MoonLit\exports</code></td>
+              </tr>
+              <tr>
+                <td data-i18n="data.config">Configuración</td>
+                <td><code>%APPDATA%\MoonLit\obs-studio</code></td>
+              </tr>
+              <tr>
+                <td data-i18n="data.portable">Portable (ZIP)</td>
+                <td><code>config/</code> y <code>MoonLitData/</code> junto al ZIP</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ COMPILAR DESDE FUENTE ============ -->
+    <section id="build" class="section">
+      <div class="container">
+        <h2 class="section-title" data-i18n="build.title">Compilar desde fuente</h2>
+        <p class="section-subtitle" data-i18n="build.subtitle">Prerrequisitos: CMake 3.28+, Visual Studio 2022 (MSVC) y las dependencias OBS Windows x64 y Qt6 en .deps/ (ver la documentación de build de OBS).</p>
+
+        <div class="code-block">
+          <div class="code-header">
+            <span class="code-label" data-i18n="build.app.label">Compilar la aplicación</span>
+            <button class="copy-btn" type="button" data-copy-target="#code-app" data-i18n="build.copy">Copiar</button>
+          </div>
+          <pre id="code-app"><code>cmake --preset windows-moonlit-x64
+cmake --build build_moonlit_v1_x64 --config RelWithDebInfo --target obs-studio -- /m:1 /v:minimal</code></pre>
+        </div>
+        <p class="code-hint" data-i18n="build.app.run">La app se ejecuta desde build_moonlit_v1_x64\rundir\RelWithDebInfo\bin\64bit\MoonLit.exe</p>
+
+        <div class="code-block">
+          <div class="code-header">
+            <span class="code-label" data-i18n="build.tests.label">Tests</span>
+            <button class="copy-btn" type="button" data-copy-target="#code-tests" data-i18n="build.copy">Copiar</button>
+          </div>
+          <pre id="code-tests"><code>cmake --build build_moonlit_v1_x64 --config RelWithDebInfo --target moonlit-tests
+$env:PATH = ".deps\obs-deps-2026-07-15-x64\bin;.deps\obs-deps-qt6-2026-07-15-x64\bin;$env:PATH"
+ctest --test-dir build_moonlit_v1_x64 -C RelWithDebInfo --output-on-failure</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DOCS Y LICENCIA ============ -->
+    <section id="docs" class="section">
+      <div class="container">
+        <h2 class="section-title" data-i18n="docs.title">Documentación y licencia</h2>
+        <div class="cards-grid">
+          <a class="card card-link" href="https://github.com/SourisCG/MoonLit/blob/main/docs/moonlit/PROJECT_PLAN.md" target="_blank" rel="noopener">
+            <h3 class="card-title card-mono" data-i18n="docs.plan">docs/moonlit/PROJECT_PLAN.md</h3>
+            <p class="card-text" data-i18n="docs.plan.text">Plan de producto, registro de fases y log de ejecución.</p>
+          </a>
+          <a class="card card-link" href="https://github.com/SourisCG/MoonLit/blob/main/docs/moonlit/MANUAL_MATRIX.md" target="_blank" rel="noopener">
+            <h3 class="card-title card-mono" data-i18n="docs.matrix">docs/moonlit/MANUAL_MATRIX.md</h3>
+            <p class="card-text" data-i18n="docs.matrix.text">Matriz de pruebas manuales y procedimiento de firma.</p>
+          </a>
+          <div class="card">
+            <h3 class="card-title" data-i18n="docs.license.title">Licencia</h3>
+            <p class="card-text" data-i18n="docs.license.text">MoonLit es software libre bajo la GNU General Public License v2, igual que su base OBS Studio. Los archivos integrados de SQLite y FTS5 están en dominio público.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span data-i18n="footer.text">MoonLit — software libre bajo GPL v2</span>
+      <a href="https://github.com/SourisCG/MoonLit" target="_blank" rel="noopener" data-i18n="footer.source">Código fuente en GitHub</a>
+    </div>
+  </footer>
+
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

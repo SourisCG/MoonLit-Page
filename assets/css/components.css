@@ -1,0 +1,456 @@
+/* ============================================================
+   components.css — navbar, hero, cards, tablas, código, footer
+   Cada bloque está marcado con un comentario para encontrarlo.
+   ============================================================ */
+
+/* ============ NAVBAR ============ */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--navbar-h);
+  background: rgba(13, 15, 20, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+
+.navbar-inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.navbar-brand {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 4px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  flex: 1;
+}
+
+.navbar-links::-webkit-scrollbar {
+  display: none;
+}
+
+.navbar-links a {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+}
+
+.navbar-links a:hover {
+  color: var(--text);
+  background: var(--accent-soft);
+  text-decoration: none;
+}
+
+.navbar-links a.is-active {
+  color: var(--accent-2);
+}
+
+/* --- Selector de idioma --- */
+.lang-switch {
+  display: flex;
+  gap: 2px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 3px;
+  flex-shrink: 0;
+}
+
+.lang-btn {
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.lang-btn:hover {
+  color: var(--text);
+}
+
+.lang-btn.is-active {
+  background: linear-gradient(120deg, var(--accent), var(--accent-2));
+  color: #fff;
+}
+
+/* ============ HERO ============ */
+.hero {
+  padding: 96px 0 80px;
+  text-align: center;
+}
+
+.hero-badges {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.hero-badge {
+  display: inline-block;
+  font-size: 0.82rem;
+  color: var(--accent-2);
+  background: var(--accent-soft);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 6px 16px;
+  margin-bottom: 0;
+}
+
+.hero-badge:last-child {
+  color: var(--text-muted);
+}
+
+.hero-title {
+  font-size: 4rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+
+.hero-tagline {
+  font-size: 1.35rem;
+  color: var(--text);
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.hero-description {
+  max-width: 720px;
+  margin: 0 auto 32px;
+  color: var(--text-muted);
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.hero-note {
+  margin-top: 16px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* ============ BOTONES ============ */
+.btn {
+  display: inline-block;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 12px 28px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: linear-gradient(120deg, var(--accent), var(--accent-2));
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 8px 24px rgba(139, 124, 246, 0.28);
+}
+
+.btn-secondary {
+  background: var(--surface);
+  color: var(--text);
+}
+
+.btn-secondary:hover {
+  background: var(--surface-2);
+}
+
+/* ============ SECCIONES ============ */
+.section {
+  padding: var(--section-pad) 0;
+  scroll-margin-top: var(--navbar-h);
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 3px;
+  margin: 12px auto 0;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--text-muted);
+  max-width: 640px;
+  margin: 0 auto 40px;
+}
+
+/* ============ TARJETAS ============ */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  transition: border-color 0.15s, transform 0.15s;
+}
+
+.card:hover {
+  border-color: rgba(139, 124, 246, 0.5);
+  transform: translateY(-2px);
+}
+
+.card-title {
+  margin-bottom: 8px;
+}
+
+.card-mono {
+  font-family: var(--font-mono);
+  font-size: 0.92rem;
+  word-break: break-all;
+}
+
+.card-text {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.card-link {
+  display: block;
+  color: inherit;
+}
+
+/* ============ PANEL (inspiración) ============ */
+.panel {
+  background: linear-gradient(160deg, var(--surface), var(--surface-2));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 48px 40px;
+}
+
+.panel-text {
+  text-align: center;
+  color: var(--text-muted);
+  max-width: 720px;
+  margin: 0 auto 40px;
+}
+
+/* ============ GRILLA PEQUEÑA (uso + inspiración) ============ */
+.mini-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.mini-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.mini-dot {
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  margin-top: 8px;
+  border-radius: 50%;
+  background: linear-gradient(120deg, var(--accent), var(--accent-2));
+}
+
+.mini-title {
+  margin-bottom: 4px;
+  font-size: 1rem;
+}
+
+.mini-text {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+/* ============ LISTA DE REQUISITOS ============ */
+.checklist {
+  list-style: none;
+  max-width: 640px;
+  margin: 0 auto;
+  display: grid;
+  gap: 12px;
+}
+
+.checklist li {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 16px 20px;
+  padding-left: 44px;
+  position: relative;
+  color: var(--text);
+}
+
+.checklist li::before {
+  content: "✓";
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--accent-2);
+  font-weight: 700;
+}
+
+/* ============ CAJA DE NOTA ============ */
+.note-box {
+  margin-top: 20px;
+  background: var(--accent-soft);
+  border: 1px solid rgba(139, 124, 246, 0.35);
+  border-radius: var(--radius-sm);
+  padding: 16px 20px;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+/* ============ TABLA DE DATOS ============ */
+.table-wrap {
+  overflow-x: auto;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.data-table th,
+.data-table td {
+  text-align: left;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.95rem;
+}
+
+.data-table th {
+  background: var(--surface-2);
+  color: var(--text);
+  font-weight: 600;
+}
+
+.data-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* ============ BLOQUES DE CÓDIGO ============ */
+.code-block {
+  margin: 0 auto 12px;
+  max-width: 780px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.code-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 16px;
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--border);
+}
+
+.code-label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.code-block pre {
+  padding: 18px 20px;
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.code-hint {
+  max-width: 780px;
+  margin: 0 auto 32px;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+/* --- Botón copiar --- */
+.copy-btn {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 5px 14px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.copy-btn:hover {
+  background: var(--surface-2);
+  border-color: var(--accent);
+}
+
+.copy-btn.is-copied {
+  border-color: var(--accent-2);
+  color: var(--accent-2);
+}
+
+/* ============ FOOTER ============ */
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 32px 0;
+  margin-top: 40px;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}

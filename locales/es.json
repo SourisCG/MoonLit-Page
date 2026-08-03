@@ -1,0 +1,107 @@
+{
+  "meta.title": "MoonLit — Grabador de clips local-first para Windows",
+  "meta.description": "MoonLit es un grabador de clips local-first para Windows x64 basado en OBS Studio. Inspirado en la idea de Medal.tv, pero de código abierto y 100% local: sin cuentas, sin nube, sin streaming.",
+
+  "nav.features": "Características",
+  "nav.inspiration": "Inspiración",
+  "nav.requirements": "Requisitos",
+  "nav.install": "Instalación",
+  "nav.usage": "Uso",
+  "nav.data": "Datos",
+  "nav.build": "Compilar",
+  "nav.docs": "Docs y licencia",
+
+  "lang.switch": "Idioma",
+  "lang.es": "Español",
+  "lang.en": "English",
+
+  "hero.badge": "Basado en OBS Studio 32.2.1",
+  "hero.linux-note": "Versión para Linux próximamente",
+  "hero.tagline": "Grabador de clips local-first para Windows x64",
+  "hero.description": "Captura tus partidas, mantén una librería local con búsqueda y exporta clips recortados. MoonLit se inspira en la idea de Medal.tv: como Office y LibreOffice, es un programa similar, pero de código abierto y 100% local — sin cuentas, sin nube, sin streaming.",
+  "hero.installer": "Descargar instalador",
+  "hero.portable": "Descargar portable",
+  "hero.releases": "Las descargas se publican en la página de Releases.",
+
+  "features.title": "Características",
+  "features.subtitle": "Todo lo que necesitas para capturar y conservar tus mejores momentos, en tu propia máquina.",
+
+  "features.detection.title": "Detección y captura de juego",
+  "features.detection.text": "Detección automática del objetivo con Windows Graphics Capture (WGC), escudo de privacidad al perder el foco y respaldo seguro DXGI. Sin hooks, sin inyección y sin cámara virtual.",
+
+  "features.buffer.title": "Replay buffer",
+  "features.buffer.text": "Clips MKV con cuatro pistas de audio (mixto, juego, micrófono y chat). Guarda un clip con F8 desde dentro del juego, con señal sonora, o desde el dashboard y la bandeja.",
+
+  "features.library.title": "Librería local",
+  "features.library.text": "SQLite con búsqueda FTS5, miniaturas y filtros (Todos, Disponibles, Faltantes). Importa archivos externos, abre en el Explorador, borra a la papelera y reconcilia al inicio.",
+
+  "features.editor.title": "Editor de clips",
+  "features.editor.text": "Vista previa con tira de frames y búsqueda, mangos de recorte arrastrables, silenciar y ganancia. Exportación MP4 alineada a keyframes en segundo plano, con progreso, cancelación y verificación de duración.",
+
+  "features.audio.title": "Audio",
+  "features.audio.text": "Audio de escritorio, micrófono y chat con mixer compacto (volumen y mute por fuente) y menús de selección de dispositivos. Supresión de ruido estilo Krisp (RNNoise + noise gate) en el micrófono.",
+
+  "features.tray.title": "Bandeja y arranque",
+  "features.tray.text": "Cerrar a bandeja, minimizar a bandeja y arranque al iniciar sesión con --minimize-to-tray. Marca MoonLit en toda la aplicación.",
+
+  "inspiration.title": "Inspirado en la idea de Medal.tv",
+  "inspiration.text": "Medal.tv popularizó la idea de guardar clips de tus partidas con un solo toque. MoonLit toma esa misma idea y la convierte en un programa similar de código abierto: como Office y LibreOffice, misma idea, filosofía distinta.",
+  "inspiration.local.title": "100% local",
+  "inspiration.local.text": "Tus clips viven en tu disco, no en una nube.",
+  "inspiration.opensource.title": "Código abierto",
+  "inspiration.opensource.text": "Software libre bajo GPL v2, basado en OBS Studio.",
+  "inspiration.nocloud.title": "Sin cuentas",
+  "inspiration.nocloud.text": "Sin registro, sin inicio de sesión y sin telemetría.",
+  "inspiration.private.title": "Privado por defecto",
+  "inspiration.private.text": "Nada se comparte salvo que tú lo exportes a mano.",
+
+  "requirements.title": "Requisitos",
+  "requirements.item1": "Windows 10 build 19041 o posterior, x64.",
+  "requirements.item2": "Una GPU compatible con encoders de hardware (NVENC, QSV o AMF); x264 es el respaldo por software.",
+
+  "install.title": "Instalación",
+  "install.subtitle": "Dos opciones (ver la última release en GitHub Releases):",
+  "install.setup.title": "Instalador (MoonLit-*-Setup.exe)",
+  "install.setup.text": "Instalación NSIS por usuario, sin administrador. Instala en %LOCALAPPDATA%\\Programs\\MoonLit. Al desinstalar se conservan tus clips, base de datos y configuración.",
+  "install.portable.title": "Portable (MoonLit-*-x64.zip)",
+  "install.portable.text": "Extrae en cualquier lugar y ejecuta bin\\64bit\\MoonLit.exe. Un marcador portable_mode mantiene configuración y datos (config/ y MoonLitData/) junto al ZIP extraído.",
+  "install.signing": "Firma: los binarios están firmados con el certificado autofirmado \"MoonLit Development\". En máquinas distintas a la de compilación, instala el certificado en Trusted Root/Trusted Publisher (ver docs/moonlit/MANUAL_MATRIX.md) o SmartScreen mostrará el aviso \"Publicador desconocido\".",
+
+  "usage.title": "Uso",
+  "usage.dashboard.title": "Dashboard",
+  "usage.dashboard.text": "Gran botón para iniciar o detener el replay buffer. \"Guardar clip\" guarda los últimos N segundos y los clips recientes abren la librería.",
+  "usage.f8.title": "F8",
+  "usage.f8.text": "Guarda un clip desde dentro del juego, solo cuando el replay buffer está activo.",
+  "usage.library.title": "Librería",
+  "usage.library.text": "Cuadrícula de miniaturas con búsqueda y filtros. Selecciona un clip para abrir el editor (vista previa, recorte, mute y ganancia) y exportar MP4.",
+  "usage.settings.title": "Ajustes",
+  "usage.settings.text": "Encoder (todos los codecs OBS registrados), longitud del replay, pistas de audio, carpeta de grabación, dispositivos, ejecutable de chat, supresión de ruido, sonido de clip y arranque con el sistema.",
+
+  "data.title": "Ubicación de datos",
+  "data.scope": "Ámbito",
+  "data.location": "Ubicación",
+  "data.clips": "Clips (MKV)",
+  "data.db": "Base de datos",
+  "data.exports": "Exportaciones (MP4)",
+  "data.config": "Configuración",
+  "data.portable": "Portable (ZIP)",
+
+  "build.title": "Compilar desde fuente",
+  "build.subtitle": "Prerrequisitos: CMake 3.28+, Visual Studio 2022 (MSVC) y las dependencias OBS Windows x64 y Qt6 en .deps/ (ver la documentación de build de OBS).",
+  "build.app.label": "Compilar la aplicación",
+  "build.app.run": "La app se ejecuta desde build_moonlit_v1_x64\\rundir\\RelWithDebInfo\\bin\\64bit\\MoonLit.exe",
+  "build.tests.label": "Tests",
+  "build.copy": "Copiar",
+  "build.copied": "Copiado",
+
+  "docs.title": "Documentación y licencia",
+  "docs.plan": "docs/moonlit/PROJECT_PLAN.md",
+  "docs.plan.text": "Plan de producto, registro de fases y log de ejecución.",
+  "docs.matrix": "docs/moonlit/MANUAL_MATRIX.md",
+  "docs.matrix.text": "Matriz de pruebas manuales y procedimiento de firma.",
+  "docs.license.title": "Licencia",
+  "docs.license.text": "MoonLit es software libre bajo la GNU General Public License v2, igual que su base OBS Studio. Los archivos integrados de SQLite y FTS5 están en dominio público.",
+
+  "footer.text": "MoonLit — software libre bajo GPL v2",
+  "footer.source": "Código fuente en GitHub"
+}

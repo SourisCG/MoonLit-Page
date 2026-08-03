@@ -1,0 +1,101 @@
+/* ============================================================
+   main.css — variables, reset y estilos base
+   Para cambiar colores, edita las variables de :root abajo.
+   ============================================================ */
+
+:root {
+  /* Colores */
+  --bg: #0d0f14;
+  --surface: #141824;
+  --surface-2: #1a2030;
+  --border: #262e40;
+  --text: #e6e9f0;
+  --text-muted: #98a2b8;
+  --accent: #8b7cf6;
+  --accent-2: #5b8cff;
+  --accent-soft: rgba(139, 124, 246, 0.12);
+
+  /* Tipografía */
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "Cascadia Mono", Consolas, "Liberation Mono", monospace;
+
+  /* Medidas */
+  --radius: 12px;
+  --radius-sm: 8px;
+  --navbar-h: 64px;
+  --max-width: 1080px;
+  --section-pad: 80px;
+}
+
+/* --- Reset básico --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* --- Base --- */
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Resplandor sutil en la parte superior de la página */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 420px;
+  background: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(139, 124, 246, 0.16), transparent 70%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+h1, h2, h3 {
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+h1 { font-size: 3rem; }
+h2 { font-size: 1.9rem; }
+h3 { font-size: 1.05rem; }
+
+a {
+  color: var(--accent-2);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.1em 0.4em;
+}
+
+/* --- Utilidades --- */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.brand-accent {
+  background: linear-gradient(120deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
