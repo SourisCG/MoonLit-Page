@@ -22,6 +22,7 @@
   "hero.installer": "Download installer",
   "hero.portable": "Download portable",
   "hero.releases": "Downloads are published on the Releases page.",
+  "hero.wip": "MoonLit is under active development: it is a young project and may contain bugs.",
 
   "features.title": "Features",
   "features.subtitle": "Everything you need to capture and keep your best moments, on your own machine.",

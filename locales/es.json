@@ -22,6 +22,7 @@
   "hero.installer": "Descargar instalador",
   "hero.portable": "Descargar portable",
   "hero.releases": "Las descargas se publican en la página de Releases.",
+  "hero.wip": "MoonLit está en desarrollo activo: es un proyecto joven y puede contener errores.",
 
   "features.title": "Características",
   "features.subtitle": "Todo lo que necesitas para capturar y conservar tus mejores momentos, en tu propia máquina.",
