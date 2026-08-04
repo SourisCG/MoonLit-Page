@@ -26,6 +26,86 @@
   font-weight: 800;
   color: var(--text);
   white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+/* ============ LOGO (luna + play, rojo y azul) ============ */
+.logo {
+  position: relative;
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* La luna creciente con gradiente rojo -> azul */
+.logo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ef4444 10%, #3b82f6 90%);
+  -webkit-mask: radial-gradient(circle at 68% 50%, transparent 44%, #000 45%);
+  mask: radial-gradient(circle at 68% 50%, transparent 44%, #000 45%);
+}
+
+/* Resplandor rojo/azul con pulso suave */
+.logo::after {
+  content: "";
+  position: absolute;
+  inset: -5px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.45), rgba(59, 130, 246, 0.45));
+  filter: blur(10px);
+  z-index: -1;
+  animation: logo-pulse 3.5s ease-in-out infinite;
+}
+
+/* Triángulo de play blanco dentro del hueco de la luna */
+.logo-play {
+  position: absolute;
+  left: 68%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border-top: 4.5px solid transparent;
+  border-bottom: 4.5px solid transparent;
+  border-left: 7px solid #fff;
+  transition: transform 0.2s ease;
+}
+
+@keyframes logo-pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+/* Logo grande del hero */
+.hero-logo {
+  transition: transform 0.2s ease;
+  will-change: transform;
+}
+
+.logo-lg {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 16px;
+}
+
+.logo-lg .logo-play {
+  border-top-width: 10px;
+  border-bottom-width: 10px;
+  border-left-width: 16px;
+  transition: transform 0.2s ease;
+}
+
+/* Al pasar el ratón, el play se desliza un poco hacia la derecha */
+.navbar-brand:hover .logo-play,
+.hero-logo:hover .logo-play {
+  transform: translate(-50%, -50%) translateX(2px);
 }
 
 .navbar-links {

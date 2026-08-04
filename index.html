@@ -8,13 +8,19 @@
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/components.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
 </head>
 <body>
 
   <!-- ============ NAVBAR ============ -->
   <header class="navbar">
     <div class="container navbar-inner">
-      <a href="#hero" class="navbar-brand">Moon<span class="brand-accent">Lit</span></a>
+      <a href="#hero" class="navbar-brand">
+        <span class="logo" aria-hidden="true">
+          <span class="logo-play"></span>
+        </span>
+        Moon<span class="brand-accent">Lit</span>
+      </a>
       <nav class="navbar-links" id="navbar-links" aria-label="Menú">
         <a href="#features" data-i18n="nav.features">Características</a>
         <a href="#inspiration" data-i18n="nav.inspiration">Inspiración</a>
@@ -41,6 +47,9 @@
           <span class="hero-badge" data-i18n="hero.badge">Basado en OBS Studio 32.2.1</span>
           <span class="hero-badge" data-i18n="hero.linux-note">Versión para Linux próximamente</span>
         </div>
+        <span class="logo logo-lg hero-logo" id="hero-logo" aria-hidden="true">
+          <span class="logo-play"></span>
+        </span>
         <h1 class="hero-title">Moon<span class="brand-accent">Lit</span></h1>
         <p class="hero-tagline" data-i18n="hero.tagline">Grabador de clips local-first para Windows x64</p>
         <p class="hero-description" data-i18n="hero.description">Captura tus partidas, mantén una librería local con búsqueda y exporta clips recortados. MoonLit se inspira en la idea de Medal.tv: como Office y LibreOffice, es un programa similar, pero de código abierto y 100% local — sin cuentas, sin nube, sin streaming.</p>

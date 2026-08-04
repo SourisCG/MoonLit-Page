@@ -50,6 +50,33 @@
     });
   });
 
+  /* --- Efecto tilt del logo del hero --- */
+  var heroLogo = document.getElementById("hero-logo");
+  var heroSection = document.getElementById("hero");
+
+  if (heroLogo && heroSection && window.matchMedia("(pointer: fine)").matches) {
+    var rafPending = false;
+
+    heroSection.addEventListener("mousemove", function (event) {
+      if (rafPending) {
+        return;
+      }
+      rafPending = true;
+      requestAnimationFrame(function () {
+        var rect = heroSection.getBoundingClientRect();
+        var x = (event.clientX - rect.left) / rect.width - 0.5;
+        var y = (event.clientY - rect.top) / rect.height - 0.5;
+        heroLogo.style.transform =
+          "rotateY(" + x * 16 + "deg) rotateX(" + y * -16 + "deg)";
+        rafPending = false;
+      });
+    });
+
+    heroSection.addEventListener("mouseleave", function () {
+      heroLogo.style.transform = "rotateY(0deg) rotateX(0deg)";
+    });
+  }
+
   /* --- Resaltar el enlace de la sección visible --- */
   var sections = document.querySelectorAll("main section[id]");
   var navLinks = document.querySelectorAll('.navbar-links a[href^="#"]');
