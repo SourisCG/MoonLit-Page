@@ -8,7 +8,19 @@
 
   var STORAGE_KEY = "moonlit-lang";
   var DEFAULT_LANG = "es";
-  var currentLang = localStorage.getItem(STORAGE_KEY) || DEFAULT_LANG;
+
+  function getBrowserLang() {
+    var nav = (navigator.language || (navigator.languages && navigator.languages[0]) || "").toLowerCase();
+    if (nav.indexOf("en") === 0) {
+      return "en";
+    }
+    if (nav.indexOf("es") === 0) {
+      return "es";
+    }
+    return DEFAULT_LANG;
+  }
+
+  var currentLang = localStorage.getItem(STORAGE_KEY) || getBrowserLang();
   var loadedLang = null;
 
   document.documentElement.lang = currentLang;
