@@ -5,10 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title data-i18n="meta.title">MoonLit — Grabador de clips local-first para Windows</title>
   <meta name="description" data-i18n="meta.description" content="MoonLit es un grabador de clips local-first para Windows x64 basado en OBS Studio. Inspirado en la idea de Medal.tv, pero de código abierto y 100% local: sin cuentas, sin nube, sin streaming.">
+  <meta name="theme-color" content="#0d0f14">
+  <link rel="canonical" href="https://moonlit.souriscg.dev/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://moonlit.souriscg.dev/">
+  <meta property="og:site_name" content="MoonLit">
+  <meta property="og:title" content="MoonLit — Grabador de clips local-first para Windows">
+  <meta property="og:description" content="Grabador de clips local-first para Windows x64 basado en OBS Studio. Inspirado en la idea de Medal.tv, pero de código abierto y 100% local: sin cuentas, sin nube, sin streaming.">
+  <meta property="og:image" content="https://moonlit.souriscg.dev/assets/images/favicon.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="MoonLit — Grabador de clips local-first para Windows">
+  <meta name="twitter:description" content="Grabador de clips local-first para Windows x64 basado en OBS Studio. 100% local, sin cuentas, sin nube, sin streaming.">
+  <meta name="twitter:image" content="https://moonlit.souriscg.dev/assets/images/favicon.png">
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/components.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
   <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+  <link rel="apple-touch-icon" href="assets/images/favicon.png">
+  <link rel="preconnect" href="https://api.github.com" crossorigin>
+  <link rel="preconnect" href="https://github.com">
 </head>
 <body>
 
@@ -54,10 +69,19 @@
         <p class="hero-tagline" data-i18n="hero.tagline">Grabador de clips local-first para Windows x64</p>
         <p class="hero-description" data-i18n="hero.description">Captura tus partidas, mantén una librería local con búsqueda y exporta clips recortados. MoonLit se inspira en la idea de Medal.tv: como Office y LibreOffice, es un programa similar, pero de código abierto y 100% local — sin cuentas, sin nube, sin streaming.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="https://github.com/SourisCG/MoonLit/releases" target="_blank" rel="noopener" data-i18n="hero.installer">Descargar instalador</a>
-          <a class="btn btn-secondary" href="https://github.com/SourisCG/MoonLit/releases" target="_blank" rel="noopener" data-i18n="hero.portable">Descargar portable</a>
+          <a class="btn btn-primary" id="btn-installer" href="https://github.com/SourisCG/MoonLit/releases" target="_blank" rel="noopener" data-i18n="hero.installer">Descargar instalador</a>
+          <a class="btn btn-secondary" id="btn-portable" href="https://github.com/SourisCG/MoonLit/releases" target="_blank" rel="noopener" data-i18n="hero.portable">Descargar portable</a>
         </div>
+        <p class="hero-download-status" id="download-status" data-i18n="hero.download.checking" hidden>Buscando la última versión...</p>
         <p class="hero-note" data-i18n="hero.releases">Las descargas se publican en la página de Releases.</p>
+        <div class="smartscreen-note">
+          <p class="smartscreen-title" data-i18n="hero.smartscreen.title">¿Windows protegió su PC?</p>
+          <p class="smartscreen-text" data-i18n="hero.smartscreen.text">Es un aviso normal de Windows con programas de publicador desconocido. Durante el desarrollo la app usa un certificado autofirmado, por eso SmartScreen lo marca como "Publicador desconocido". Para ejecutar el instalador:</p>
+          <ol class="smartscreen-steps">
+            <li data-i18n="hero.smartscreen.step1">Haz clic en "Más información".</li>
+            <li data-i18n="hero.smartscreen.step2">Haz clic en "Ejecutar de todas formas".</li>
+          </ol>
+        </div>
         <p class="wip-note" data-i18n="hero.wip">MoonLit está en desarrollo activo: es un proyecto joven y puede contener errores.</p>
       </div>
     </section>
@@ -163,6 +187,7 @@
           </article>
         </div>
         <div class="note-box" data-i18n="install.signing">Firma: los binarios están firmados con el certificado autofirmado "MoonLit Development". En máquinas distintas a la de compilación, instala el certificado en Trusted Root/Trusted Publisher (ver docs/moonlit/MANUAL_MATRIX.md) o SmartScreen mostrará el aviso "Publicador desconocido".</div>
+        <p class="note-box-link"><a href="#hero" data-i18n="install.smartscreen.link">¿Windows protegió su PC? Cómo ejecutarlo</a></p>
       </div>
     </section>
 
@@ -301,7 +326,7 @@ ctest --test-dir build_moonlit_v1_x64 -C RelWithDebInfo --output-on-failure</cod
     </div>
   </footer>
 
-  <script src="assets/js/i18n.js"></script>
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/i18n.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>

@@ -29,7 +29,9 @@
 
   function setActiveButton() {
     buttons.forEach(function (btn) {
-      btn.classList.toggle("is-active", btn.dataset.lang === currentLang);
+      var isActive = btn.dataset.lang === currentLang;
+      btn.classList.toggle("is-active", isActive);
+      btn.setAttribute("aria-pressed", isActive ? "true" : "false");
     });
   }
 

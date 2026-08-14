@@ -93,6 +93,26 @@ code {
   padding: 0 24px;
 }
 
+/* Anillo de foco visible para navegación con teclado */
+:focus-visible {
+  outline: 2px solid var(--accent-2);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Respeta la preferencia de reducir animaciones */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
 .brand-accent {
   background: linear-gradient(120deg, var(--accent), var(--accent-2));
   -webkit-background-clip: text;

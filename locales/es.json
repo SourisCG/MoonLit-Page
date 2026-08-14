@@ -22,7 +22,14 @@
   "hero.installer": "Descargar instalador",
   "hero.portable": "Descargar portable",
   "hero.releases": "Las descargas se publican en la página de Releases.",
+  "hero.download.checking": "Buscando la última versión...",
+  "hero.download.ok": "Descarga directa de la última versión ({version})",
   "hero.wip": "MoonLit está en desarrollo activo: es un proyecto joven y puede contener errores.",
+
+  "hero.smartscreen.title": "¿Windows protegió su PC?",
+  "hero.smartscreen.text": "Es un aviso normal de Windows con programas de publicador desconocido. Durante el desarrollo la app usa un certificado autofirmado, por eso SmartScreen lo marca como \"Publicador desconocido\". Para ejecutar el instalador:",
+  "hero.smartscreen.step1": "Haz clic en \"Más información\".",
+  "hero.smartscreen.step2": "Haz clic en \"Ejecutar de todas formas\".",
 
   "features.title": "Características",
   "features.subtitle": "Todo lo que necesitas para capturar y conservar tus mejores momentos, en tu propia máquina.",
@@ -67,6 +74,7 @@
   "install.portable.title": "Portable (MoonLit-*-x64.zip)",
   "install.portable.text": "Extrae en cualquier lugar y ejecuta bin\\64bit\\MoonLit.exe. Un marcador portable_mode mantiene configuración y datos (config/ y MoonLitData/) junto al ZIP extraído.",
   "install.signing": "Firma: los binarios están firmados con el certificado autofirmado \"MoonLit Development\". En máquinas distintas a la de compilación, instala el certificado en Trusted Root/Trusted Publisher (ver docs/moonlit/MANUAL_MATRIX.md) o SmartScreen mostrará el aviso \"Publicador desconocido\".",
+  "install.smartscreen.link": "¿Windows protegió su PC? Cómo ejecutarlo",
 
   "usage.title": "Uso",
   "usage.dashboard.title": "Dashboard",

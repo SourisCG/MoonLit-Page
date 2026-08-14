@@ -22,7 +22,14 @@
   "hero.installer": "Download installer",
   "hero.portable": "Download portable",
   "hero.releases": "Downloads are published on the Releases page.",
+  "hero.download.checking": "Looking for the latest version...",
+  "hero.download.ok": "Direct download of the latest version ({version})",
   "hero.wip": "MoonLit is under active development: it is a young project and may contain bugs.",
+
+  "hero.smartscreen.title": "Did Windows protect your PC?",
+  "hero.smartscreen.text": "This is a normal Windows warning for programs with an unknown publisher. During development the app uses a self-signed certificate, so SmartScreen flags it as \"Unknown publisher\". To run the installer:",
+  "hero.smartscreen.step1": "Click \"More info\".",
+  "hero.smartscreen.step2": "Click \"Run anyway\".",
 
   "features.title": "Features",
   "features.subtitle": "Everything you need to capture and keep your best moments, on your own machine.",
@@ -67,6 +74,7 @@
   "install.portable.title": "Portable (MoonLit-*-x64.zip)",
   "install.portable.text": "Extract anywhere and run bin\\64bit\\MoonLit.exe. A portable_mode marker keeps configuration and data (config/ and MoonLitData/) next to the extracted ZIP.",
   "install.signing": "Signing: binaries are signed with the self-signed \"MoonLit Development\" certificate. On machines other than the build host, install the certificate into Trusted Root/Trusted Publisher (see docs/moonlit/MANUAL_MATRIX.md) or expect the SmartScreen \"Unknown publisher\" warning.",
+  "install.smartscreen.link": "Did Windows protect your PC? How to run it",
 
   "usage.title": "Usage",
   "usage.dashboard.title": "Dashboard",

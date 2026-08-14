@@ -1,8 +1,82 @@
 /* ============================================================
-   main.js — copiar código y resaltar la sección activa
+   main.js — copiar código, resaltar sección activa y
+   descarga directa del último release
    ============================================================ */
 (function () {
   "use strict";
+
+  /* --- Descarga directa de la última release (GitHub API) --- */
+  var installerBtn = document.getElementById("btn-installer");
+  var portableBtn = document.getElementById("btn-portable");
+  var downloadStatus = document.getElementById("download-status");
+  var RELEASES_URL = "https://github.com/SourisCG/MoonLit/releases";
+  var API_URL = "https://api.github.com/repos/SourisCG/MoonLit/releases/latest";
+
+  function applyDownloadButtons(data) {
+    if (!data || !data.assets) {
+      return false;
+    }
+    var installer = null;
+    var portable = null;
+
+    data.assets.forEach(function (asset) {
+      var name = asset.name || "";
+      if (!installer && /-Setup\.exe$/i.test(name)) {
+        installer = asset;
+      }
+      if (!portable && /-x64\.zip$/i.test(name)) {
+        portable = asset;
+      }
+    });
+
+    if (installer && installerBtn) {
+      installerBtn.href = installer.browser_download_url;
+      installerBtn.setAttribute("download", installer.name);
+    }
+    if (portable && portableBtn) {
+      portableBtn.href = portable.browser_download_url;
+      portableBtn.setAttribute("download", portable.name);
+    }
+
+    var version = data.tag_name || "";
+    var statusEl = downloadStatus;
+    if (statusEl) {
+      if (version) {
+        var okText = document.documentElement.lang === "en" ? "Direct download of the latest version ({version})" : "Descarga directa de la última versión ({version})";
+        statusEl.textContent = okText.replace("{version}", version);
+      }
+      statusEl.hidden = false;
+    }
+    return installer || portable;
+  }
+
+  if (installerBtn || portableBtn) {
+    fetch(API_URL, { headers: { "Accept": "application/vnd.github+json" } })
+      .then(function (response) {
+        if (!response.ok) {
+          throw new Error("HTTP " + response.status);
+        }
+        return response.json();
+      })
+      .then(function (data) {
+        if (applyDownloadButtons(data)) {
+          /* los botones ya apuntan al archivo directo */
+        } else if (downloadStatus) {
+          downloadStatus.hidden = true;
+        }
+      })
+      .catch(function () {
+        if (downloadStatus) {
+          downloadStatus.hidden = true;
+        }
+        if (installerBtn) {
+          installerBtn.href = RELEASES_URL;
+        }
+        if (portableBtn) {
+          portableBtn.href = RELEASES_URL;
+        }
+      });
+  }
 
   /* --- Botones "Copiar" de los bloques de código --- */
   var copyButtons = document.querySelectorAll(".copy-btn");
