@@ -297,6 +297,13 @@
   text-decoration: none;
 }
 
+/* Enlaces a ambos repositorios en el footer */
+.repo-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
 /* Insignias de estado de características */
 .status-badge {
   display: inline-block;

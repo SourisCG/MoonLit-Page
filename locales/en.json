@@ -31,6 +31,7 @@
   "deprecated.text": "The new version is under development. You can try MoonLit 0.1.7 (Windows, OBS Studio based), the latest published in the old repository:",
   "deprecated.setup": "Installer 0.1.7",
   "deprecated.portable": "Portable 0.1.7",
+  "deprecated.repo": "View repository",
   "deprecated.smartscreen.title": "Did Windows protect your PC?",
   "deprecated.smartscreen.text": "This is a normal Windows warning for programs with an unknown publisher. Version 0.1.7 uses a self-signed certificate, so SmartScreen flags it as \"Unknown publisher\". To run the installer:",
   "deprecated.smartscreen.step1": "Click \"More info\".",
@@ -127,5 +128,6 @@
   "docs.license.text": "MoonLit is free software under the GNU General Public License v3 (only).",
 
   "footer.text": "MoonLit — free software under GPL v3",
-  "footer.source": "Source code on GitHub"
+  "footer.repo.new": "MoonLit (current)",
+  "footer.repo.old": "MoonLit 0.1.7 (deprecated)"
 }
