@@ -1,10 +1,12 @@
 # MoonLit-Page
 
-Página de presentación de **MoonLit**, el grabador de clips local-first para Windows x64 (basado en OBS Studio 32.2.1).
+Página de presentación de **MoonLit**, el grabador de clips local-first para Linux y Windows (app Tauri v2 + React, GPL-3.0).
 
 Web estática: HTML + CSS + JavaScript plano. Sin frameworks, sin build tools y sin dependencias.
 
 Publicada en **https://moonlit.souriscg.dev** (GitHub Pages + dominio personalizado).
+
+> La página describe la app nueva del repo [`SourisCG/Moonlit`](https://github.com/SourisCG/Moonlit). La versión anterior (0.1.7, Windows, basada en OBS Studio) sigue descargable desde [`SourisCG/MoonLit-Deprecated`](https://github.com/SourisCG/MoonLit-Deprecated) y tiene su propio aviso en el hero.
 
 ## Estructura de carpetas
 
@@ -17,9 +19,9 @@ MoonLit-Page/
 │   │   ├── main.css        ← Colores, fuentes y estilos base
 │   │   ├── components.css  ← Estilos de cada sección (navbar, hero, logo, tarjetas...)
 │   │   └── responsive.css  ← Ajustes para móvil y tablet
-│   ├── js/
-│   │   ├── i18n.js         ← Idiomas: detecta el del navegador y aplica los textos
-│   │   └── main.js         ← Botones "copiar", menú activo y tilt del logo
+  │   ├── js/
+  │   │   ├── i18n.js         ← Idiomas: detecta el del navegador y aplica los textos
+  │   │   └── main.js         ← Descarga directa (API de GitHub), botones "copiar", menú activo y tilt del logo
 │   └── images/
 │       ├── favicon.ico     ← Icono de la pestaña (6 tamaños, 16–256 px)
 │       └── favicon.png     ← Icono en PNG (256 px, útil para la app)
@@ -67,6 +69,16 @@ Luego abre `http://localhost:8000` en el navegador.
 - El texto por defecto del HTML está en español, por eso al cargar se ve en español antes de que el JavaScript aplique el idioma.
 
 Para probar la detección: cambia el idioma del navegador a inglés (o borra los datos del sitio) y recarga.
+
+## Descarga directa y versión deprecated
+
+- Al cargar, `main.js` consulta la API de GitHub (`SourisCG/Moonlit/releases/latest`) y, si hay assets, apunta los botones del hero al archivo directo: **Linux** busca `.AppImage`, `.deb` o `.rpm`; **Windows** busca `setup.exe` o `.msi` (con compatibilidad para los nombres viejos `-Setup.exe` y `-x64.zip`).
+- Si no hay release o la API falla, los botones llevan a la página de Releases y se muestra el aviso de "próximamente" (`hero.download.coming`).
+- El bloque **deprecated** del hero (clases `.deprecated-note` / `.btn-deprecated` en `components.css`) enlaza directo a la 0.1.7 del repo antiguo:
+  - Instalador: `https://github.com/SourisCG/MoonLit-Deprecated/releases/download/0.1.7/MoonLit-0.1.7-Setup.exe`
+  - Portable: `https://github.com/SourisCG/MoonLit-Deprecated/releases/download/0.1.7/MoonLit-0.1.7-x64.zip`
+- El aviso de SmartScreen vive dentro de ese bloque (claves `deprecated.smartscreen.*`), porque solo aplica a la 0.1.7 con certificado autofirmado.
+- Las tarjetas de características llevan insignia de estado (`Disponible` / `En camino` / `Planeado`, clases `.status-available` / `.status-wip` / `.status-planned`).
 
 ## El logo
 

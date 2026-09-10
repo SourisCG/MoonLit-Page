@@ -38,7 +38,8 @@
     font-size: 1.1rem;
   }
 
-  .hero-actions .btn {
+  .hero-actions .btn,
+  .deprecated-actions .btn-deprecated {
     width: 100%;
     text-align: center;
   }

@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-i18n="meta.title">MoonLit — Grabador de clips local-first para Windows</title>
-  <meta name="description" data-i18n="meta.description" content="MoonLit es un grabador de clips local-first para Windows x64 basado en OBS Studio. Inspirado en la idea de Medal.tv, pero de código abierto y 100% local: sin cuentas, sin nube, sin streaming.">
+  <title data-i18n="meta.title">MoonLit — Grabador de clips local-first para Linux y Windows</title>
+  <meta name="description" data-i18n="meta.description" content="MoonLit es un grabador de clips local-first para Linux y Windows. Alternativa estilo Medal.tv sin nube: replay buffer, editor ligero y compartir con tu propio almacenamiento. Código abierto y 100% local.">
   <meta name="theme-color" content="#0d0f14">
   <link rel="canonical" href="https://moonlit.souriscg.dev/">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://moonlit.souriscg.dev/">
   <meta property="og:site_name" content="MoonLit">
-  <meta property="og:title" content="MoonLit — Grabador de clips local-first para Windows">
-  <meta property="og:description" content="Grabador de clips local-first para Windows x64 basado en OBS Studio. Inspirado en la idea de Medal.tv, pero de código abierto y 100% local: sin cuentas, sin nube, sin streaming.">
+  <meta property="og:title" content="MoonLit — Grabador de clips local-first para Linux y Windows">
+  <meta property="og:description" content="Grabador de clips local-first para Linux y Windows. Alternativa estilo Medal.tv sin nube: replay buffer, editor ligero y compartir con tu propio almacenamiento. Código abierto y 100% local.">
   <meta property="og:image" content="https://moonlit.souriscg.dev/assets/images/favicon.png">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="MoonLit — Grabador de clips local-first para Windows">
-  <meta name="twitter:description" content="Grabador de clips local-first para Windows x64 basado en OBS Studio. 100% local, sin cuentas, sin nube, sin streaming.">
+  <meta name="twitter:title" content="MoonLit — Grabador de clips local-first para Linux y Windows">
+  <meta name="twitter:description" content="Grabador de clips local-first para Linux y Windows. 100% local, sin cuentas, sin nube, sin telemetría.">
   <meta name="twitter:image" content="https://moonlit.souriscg.dev/assets/images/favicon.png">
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/components.css">
@@ -59,29 +59,39 @@
     <section id="hero" class="hero">
       <div class="container hero-inner">
         <div class="hero-badges">
-          <span class="hero-badge" data-i18n="hero.badge">Basado en OBS Studio 32.2.1</span>
-          <span class="hero-badge" data-i18n="hero.linux-note">Versión para Linux próximamente</span>
+          <span class="hero-badge" data-i18n="hero.badge">Disponible en Linux</span>
+          <span class="hero-badge" data-i18n="hero.linux-note">Windows en camino</span>
         </div>
         <span class="logo logo-lg hero-logo" id="hero-logo" aria-hidden="true">
           <span class="logo-play"></span>
         </span>
         <h1 class="hero-title">Moon<span class="brand-accent">Lit</span></h1>
-        <p class="hero-tagline" data-i18n="hero.tagline">Grabador de clips local-first para Windows x64</p>
-        <p class="hero-description" data-i18n="hero.description">Captura tus partidas, mantén una librería local con búsqueda y exporta clips recortados. MoonLit se inspira en la idea de Medal.tv: como Office y LibreOffice, es un programa similar, pero de código abierto y 100% local — sin cuentas, sin nube, sin streaming.</p>
+        <p class="hero-tagline" data-i18n="hero.tagline">Grabador de clips local-first para Linux y Windows</p>
+        <p class="hero-description" data-i18n="hero.description">Alternativa a Medal.tv sin nube: replay buffer con una tecla, galería local y compartir con tu propio almacenamiento (Google Drive) y webhooks. Código abierto, ligero y 100% local — sin cuentas, sin telemetría, sin nube ajena.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" id="btn-installer" href="https://github.com/SourisCG/MoonLit/releases" target="_blank" rel="noopener" data-i18n="hero.installer">Descargar instalador</a>
-          <a class="btn btn-secondary" id="btn-portable" href="https://github.com/SourisCG/MoonLit/releases" target="_blank" rel="noopener" data-i18n="hero.portable">Descargar portable</a>
+          <a class="btn btn-primary" id="btn-installer" href="https://github.com/SourisCG/Moonlit/releases" target="_blank" rel="noopener" data-i18n="hero.installer">Descargar para Linux</a>
+          <a class="btn btn-secondary" id="btn-portable" href="https://github.com/SourisCG/Moonlit/releases" target="_blank" rel="noopener" data-i18n="hero.portable">Descargar para Windows</a>
         </div>
         <p class="hero-download-status" id="download-status" data-i18n="hero.download.checking" hidden>Buscando la última versión...</p>
         <p class="hero-note" data-i18n="hero.releases">Las descargas se publican en la página de Releases.</p>
-        <div class="smartscreen-note">
-          <p class="smartscreen-title" data-i18n="hero.smartscreen.title">¿Windows protegió su PC?</p>
-          <p class="smartscreen-text" data-i18n="hero.smartscreen.text">Es un aviso normal de Windows con programas de publicador desconocido. Durante el desarrollo la app usa un certificado autofirmado, por eso SmartScreen lo marca como "Publicador desconocido". Para ejecutar el instalador:</p>
-          <ol class="smartscreen-steps">
-            <li data-i18n="hero.smartscreen.step1">Haz clic en "Más información".</li>
-            <li data-i18n="hero.smartscreen.step2">Haz clic en "Ejecutar de todas formas".</li>
-          </ol>
+
+        <div class="deprecated-note">
+          <p class="deprecated-title" data-i18n="deprecated.title">Mientras tanto: versión anterior de Windows</p>
+          <p class="deprecated-text" data-i18n="deprecated.text">La nueva versión está en desarrollo. Puedes probar MoonLit 0.1.7 (Windows, basada en OBS Studio), la última publicada en el repositorio antiguo:</p>
+          <div class="deprecated-actions">
+            <a class="btn-deprecated" href="https://github.com/SourisCG/MoonLit-Deprecated/releases/download/0.1.7/MoonLit-0.1.7-Setup.exe" target="_blank" rel="noopener" data-i18n="deprecated.setup">Instalador 0.1.7</a>
+            <a class="btn-deprecated" href="https://github.com/SourisCG/MoonLit-Deprecated/releases/download/0.1.7/MoonLit-0.1.7-x64.zip" target="_blank" rel="noopener" data-i18n="deprecated.portable">Portable 0.1.7</a>
+          </div>
+          <div class="smartscreen-note">
+            <p class="smartscreen-title" data-i18n="deprecated.smartscreen.title">¿Windows protegió su PC?</p>
+            <p class="smartscreen-text" data-i18n="deprecated.smartscreen.text">Es un aviso normal de Windows con programas de publicador desconocido. La 0.1.7 usa un certificado autofirmado, por eso SmartScreen lo marca como "Publicador desconocido". Para ejecutar el instalador:</p>
+            <ol class="smartscreen-steps">
+              <li data-i18n="deprecated.smartscreen.step1">Haz clic en "Más información".</li>
+              <li data-i18n="deprecated.smartscreen.step2">Haz clic en "Ejecutar de todas formas".</li>
+            </ol>
+          </div>
         </div>
+
         <p class="wip-note" data-i18n="hero.wip">MoonLit está en desarrollo activo: es un proyecto joven y puede contener errores.</p>
       </div>
     </section>
@@ -90,31 +100,37 @@
     <section id="features" class="section">
       <div class="container">
         <h2 class="section-title" data-i18n="features.title">Características</h2>
-        <p class="section-subtitle" data-i18n="features.subtitle">Todo lo que necesitas para capturar y conservar tus mejores momentos, en tu propia máquina.</p>
+        <p class="section-subtitle" data-i18n="features.subtitle">Lo esencial para capturar, conservar y compartir tus clips, sin depender de una nube.</p>
         <div class="cards-grid">
           <article class="card">
-            <h3 class="card-title" data-i18n="features.detection.title">Detección y captura de juego</h3>
-            <p class="card-text" data-i18n="features.detection.text">Detección automática del objetivo con Windows Graphics Capture (WGC), escudo de privacidad al perder el foco y respaldo seguro DXGI. Sin hooks, sin inyección y sin cámara virtual.</p>
+            <span class="status-badge status-available" data-i18n="features.status.available">Disponible</span>
+            <h3 class="card-title" data-i18n="features.buffer.title">Replay buffer con F9</h3>
+            <p class="card-text" data-i18n="features.buffer.text">Bucle de repetición con gpu-screen-recorder integrado (Linux): guarda los últimos segundos con una tecla desde la bandeja, con el audio mixto primero.</p>
           </article>
           <article class="card">
-            <h3 class="card-title" data-i18n="features.buffer.title">Replay buffer</h3>
-            <p class="card-text" data-i18n="features.buffer.text">Clips MKV con cuatro pistas de audio (mixto, juego, micrófono y chat). Guarda un clip con F8 desde dentro del juego, con señal sonora, o desde el dashboard y la bandeja.</p>
+            <span class="status-badge status-available" data-i18n="features.status.available">Disponible</span>
+            <h3 class="card-title" data-i18n="features.audio.title">Audio por pistas</h3>
+            <p class="card-text" data-i18n="features.audio.text">Tres pistas de audio (mixto, juego y chat) con ganancias en vivo, codificación CBR estilo Medal con NVENC HQ y 30/60 fps.</p>
           </article>
           <article class="card">
-            <h3 class="card-title" data-i18n="features.library.title">Librería local</h3>
-            <p class="card-text" data-i18n="features.library.text">SQLite con búsqueda FTS5, miniaturas y filtros (Todos, Disponibles, Faltantes). Importa archivos externos, abre en el Explorador, borra a la papelera y reconcilia al inicio.</p>
+            <span class="status-badge status-available" data-i18n="features.status.available">Disponible</span>
+            <h3 class="card-title" data-i18n="features.gallery.title">Galería local</h3>
+            <p class="card-text" data-i18n="features.gallery.text">Galería con miniaturas y duraciones reales, sin nube. Tus clips viven en tu disco y se guardan con escalado lanczos.</p>
           </article>
           <article class="card">
-            <h3 class="card-title" data-i18n="features.editor.title">Editor de clips</h3>
-            <p class="card-text" data-i18n="features.editor.text">Vista previa con tira de frames y búsqueda, mangos de recorte arrastrables, silenciar y ganancia. Exportación MP4 alineada a keyframes en segundo plano, con progreso, cancelación y verificación de duración.</p>
+            <span class="status-badge status-available" data-i18n="features.status.available">Disponible</span>
+            <h3 class="card-title" data-i18n="features.privacy.title">Datos sin nube</h3>
+            <p class="card-text" data-i18n="features.privacy.text">Ajustes en SQLite con rutas relativas, credenciales en el keyring del sistema y selección de monitor. Portable: todo junto a la aplicación.</p>
           </article>
           <article class="card">
-            <h3 class="card-title" data-i18n="features.audio.title">Audio</h3>
-            <p class="card-text" data-i18n="features.audio.text">Audio de escritorio, micrófono y chat con mixer compacto (volumen y mute por fuente) y menús de selección de dispositivos. Supresión de ruido estilo Krisp (RNNoise + noise gate) en el micrófono.</p>
+            <span class="status-badge status-wip" data-i18n="features.status.wip">En camino</span>
+            <h3 class="card-title" data-i18n="features.windows.title">Captura en Windows</h3>
+            <p class="card-text" data-i18n="features.windows.text">Puerto de Windows con captura WGC y audio WASAPI sobre los encoders AMF/QSV. Es la próxima fase del desarrollo.</p>
           </article>
           <article class="card">
-            <h3 class="card-title" data-i18n="features.tray.title">Bandeja y arranque</h3>
-            <p class="card-text" data-i18n="features.tray.text">Cerrar a bandeja, minimizar a bandeja y arranque al iniciar sesión con --minimize-to-tray. Marca MoonLit en toda la aplicación.</p>
+            <span class="status-badge status-planned" data-i18n="features.status.planned">Planeado</span>
+            <h3 class="card-title" data-i18n="features.editor.title">Editor y compartir</h3>
+            <p class="card-text" data-i18n="features.editor.text">Editor de timeline (recortar, vertical y remix) y publicación a tu propio almacenamiento (Google Drive) y webhooks. Previsto en las siguientes fases.</p>
           </article>
         </div>
       </div>
@@ -138,21 +154,21 @@
               <span class="mini-dot"></span>
               <div>
                 <h3 class="mini-title" data-i18n="inspiration.opensource.title">Código abierto</h3>
-                <p class="mini-text" data-i18n="inspiration.opensource.text">Software libre bajo GPL v2, basado en OBS Studio.</p>
+                <p class="mini-text" data-i18n="inspiration.opensource.text">Software libre bajo GPL-3.0, con gpu-screen-recorder como motor en Linux.</p>
               </div>
             </div>
             <div class="mini-item">
               <span class="mini-dot"></span>
               <div>
-                <h3 class="mini-title" data-i18n="inspiration.nocloud.title">Sin cuentas</h3>
-                <p class="mini-text" data-i18n="inspiration.nocloud.text">Sin registro, sin inicio de sesión y sin telemetría.</p>
+                <h3 class="mini-title" data-i18n="inspiration.nocloud.title">Sin cuentas obligatorias</h3>
+                <p class="mini-text" data-i18n="inspiration.nocloud.text">Sin registro ni telemetría; el compartir pasa por tu propio almacenamiento.</p>
               </div>
             </div>
             <div class="mini-item">
               <span class="mini-dot"></span>
               <div>
                 <h3 class="mini-title" data-i18n="inspiration.private.title">Privado por defecto</h3>
-                <p class="mini-text" data-i18n="inspiration.private.text">Nada se comparte salvo que tú lo exportes a mano.</p>
+                <p class="mini-text" data-i18n="inspiration.private.text">Nada se comparte salvo que tú lo publiques a mano.</p>
               </div>
             </div>
           </div>
@@ -165,8 +181,9 @@
       <div class="container">
         <h2 class="section-title" data-i18n="requirements.title">Requisitos</h2>
         <ul class="checklist">
-          <li data-i18n="requirements.item1">Windows 10 build 19041 o posterior, x64.</li>
-          <li data-i18n="requirements.item2">Una GPU compatible con encoders de hardware (NVENC, QSV o AMF); x264 es el respaldo por software.</li>
+          <li data-i18n="requirements.item1">Linux (X11/Wayland): fase actual, con gpu-screen-recorder como motor de captura.</li>
+          <li data-i18n="requirements.item2">Windows 10/11 x64: en camino (WGC + WASAPI + AMF/QSV).</li>
+          <li data-i18n="requirements.item3">GPU compatible para codificación por hardware (NVENC sobre Linux; QSV/AMF próximamente).</li>
         </ul>
       </div>
     </section>
@@ -175,19 +192,19 @@
     <section id="install" class="section">
       <div class="container">
         <h2 class="section-title" data-i18n="install.title">Instalación</h2>
-        <p class="section-subtitle" data-i18n="install.subtitle">Dos opciones (ver la última release en GitHub Releases):</p>
+        <p class="section-subtitle" data-i18n="install.subtitle">La primera release de la nueva versión publicará paquetes nativos:</p>
         <div class="cards-grid">
           <article class="card">
-            <h3 class="card-title" data-i18n="install.setup.title">Instalador (MoonLit-*-Setup.exe)</h3>
-            <p class="card-text" data-i18n="install.setup.text">Instalación NSIS por usuario, sin administrador. Instala en %LOCALAPPDATA%\Programs\MoonLit. Al desinstalar se conservan tus clips, base de datos y configuración.</p>
+            <h3 class="card-title" data-i18n="install.linux.title">Linux</h3>
+            <p class="card-text" data-i18n="install.linux.text">Paquetes .deb, .rpm y .AppImage.</p>
           </article>
           <article class="card">
-            <h3 class="card-title" data-i18n="install.portable.title">Portable (MoonLit-*-x64.zip)</h3>
-            <p class="card-text" data-i18n="install.portable.text">Extrae en cualquier lugar y ejecuta bin\64bit\MoonLit.exe. Un marcador portable_mode mantiene configuración y datos (config/ y MoonLitData/) junto al ZIP extraído.</p>
+            <h3 class="card-title" data-i18n="install.windows.title">Windows</h3>
+            <p class="card-text" data-i18n="install.windows.text">Instalador .exe y .msi.</p>
           </article>
         </div>
-        <div class="note-box" data-i18n="install.signing">Firma: los binarios están firmados con el certificado autofirmado "MoonLit Development". En máquinas distintas a la de compilación, instala el certificado en Trusted Root/Trusted Publisher (ver docs/moonlit/MANUAL_MATRIX.md) o SmartScreen mostrará el aviso "Publicador desconocido".</div>
-        <p class="note-box-link"><a href="#hero" data-i18n="install.smartscreen.link">¿Windows protegió su PC? Cómo ejecutarlo</a></p>
+        <div class="note-box" data-i18n="install.packaging">La distribución de paquetes es la fase 7 del roadmap (nsis/msi/appimage/deb/rpm).</div>
+        <p class="note-box-link"><a href="#hero" data-i18n="install.deprecated.link">Descargar la versión anterior (0.1.7)</a></p>
       </div>
     </section>
 
@@ -199,29 +216,29 @@
           <div class="mini-item">
             <span class="mini-dot"></span>
             <div>
-              <h3 class="mini-title" data-i18n="usage.dashboard.title">Dashboard</h3>
-              <p class="mini-text" data-i18n="usage.dashboard.text">Gran botón para iniciar o detener el replay buffer. "Guardar clip" guarda los últimos N segundos y los clips recientes abren la librería.</p>
+              <h3 class="mini-title" data-i18n="usage.tray.title">Bandeja + F9</h3>
+              <p class="mini-text" data-i18n="usage.tray.text">El replay buffer se maneja desde la bandeja; una tecla (F9) guarda el clip al instante.</p>
             </div>
           </div>
           <div class="mini-item">
             <span class="mini-dot"></span>
             <div>
-              <h3 class="mini-title" data-i18n="usage.f8.title">F8</h3>
-              <p class="mini-text" data-i18n="usage.f8.text">Guarda un clip desde dentro del juego, solo cuando el replay buffer está activo.</p>
-            </div>
-          </div>
-          <div class="mini-item">
-            <span class="mini-dot"></span>
-            <div>
-              <h3 class="mini-title" data-i18n="usage.library.title">Librería</h3>
-              <p class="mini-text" data-i18n="usage.library.text">Cuadrícula de miniaturas con búsqueda y filtros. Selecciona un clip para abrir el editor (vista previa, recorte, mute y ganancia) y exportar MP4.</p>
+              <h3 class="mini-title" data-i18n="usage.gallery.title">Galería</h3>
+              <p class="mini-text" data-i18n="usage.gallery.text">Miniaturas con duración real, búsqueda y borrado. Todo local y al instante.</p>
             </div>
           </div>
           <div class="mini-item">
             <span class="mini-dot"></span>
             <div>
               <h3 class="mini-title" data-i18n="usage.settings.title">Ajustes</h3>
-              <p class="mini-text" data-i18n="usage.settings.text">Encoder (todos los codecs OBS registrados), longitud del replay, pistas de audio, carpeta de grabación, dispositivos, ejecutable de chat, supresión de ruido, sonido de clip y arranque con el sistema.</p>
+              <p class="mini-text" data-i18n="usage.settings.text">Selección de monitor, 30/60 fps, calidad de codificación, ganancias por pista y credenciales en el keyring.</p>
+            </div>
+          </div>
+          <div class="mini-item">
+            <span class="mini-dot"></span>
+            <div>
+              <h3 class="mini-title" data-i18n="usage.ui.title">Interfaz MoonLit</h3>
+              <p class="mini-text" data-i18n="usage.ui.text">UI frameless con tema propio y bilingüe (ES/EN).</p>
             </div>
           </div>
         </div>
@@ -242,28 +259,29 @@
             </thead>
             <tbody>
               <tr>
-                <td data-i18n="data.clips">Clips (MKV)</td>
-                <td><code>%LOCALAPPDATA%\MoonLit\clips</code></td>
+                <td data-i18n="data.clips">Clips</td>
+                <td data-i18n="data.clips.loc">Carpeta de clips, relativa a los datos de la app</td>
               </tr>
               <tr>
                 <td data-i18n="data.db">Base de datos</td>
-                <td><code>%LOCALAPPDATA%\MoonLit\MoonLit.db</code></td>
+                <td data-i18n="data.db.loc">SQLite con biblioteca, apps y ajustes</td>
               </tr>
               <tr>
-                <td data-i18n="data.exports">Exportaciones (MP4)</td>
-                <td><code>%LOCALAPPDATA%\MoonLit\exports</code></td>
+                <td data-i18n="data.custom">Apps personalizadas</td>
+                <td data-i18n="data.custom.loc">Registro de juegos personalizados</td>
               </tr>
               <tr>
-                <td data-i18n="data.config">Configuración</td>
-                <td><code>%APPDATA%\MoonLit\obs-studio</code></td>
+                <td data-i18n="data.credentials">Credenciales</td>
+                <td data-i18n="data.credentials.loc">Keyring del sistema (Secret Service / Credential Manager)</td>
               </tr>
               <tr>
-                <td data-i18n="data.portable">Portable (ZIP)</td>
-                <td><code>config/</code> y <code>MoonLitData/</code> junto al ZIP</td>
+                <td data-i18n="data.portable">Portable</td>
+                <td data-i18n="data.portable.loc">Todo junto a la carpeta de la app</td>
               </tr>
             </tbody>
           </table>
         </div>
+        <div class="note-box" data-i18n="data.note">La app usa rutas relativas: en modo portable todo vive junto a la carpeta de la app; en modo instalado, en los directorios de datos del sistema (por ejemplo %LOCALAPPDATA% en Windows y ~/.local/share en Linux).</div>
       </div>
     </section>
 
@@ -271,26 +289,26 @@
     <section id="build" class="section">
       <div class="container">
         <h2 class="section-title" data-i18n="build.title">Compilar desde fuente</h2>
-        <p class="section-subtitle" data-i18n="build.subtitle">Prerrequisitos: CMake 3.28+, Visual Studio 2022 (MSVC) y las dependencias OBS Windows x64 y Qt6 en .deps/ (ver la documentación de build de OBS).</p>
+        <p class="section-subtitle" data-i18n="build.subtitle">Prerrequisitos: Node + pnpm y toolchain de Rust (Tauri v2).</p>
 
         <div class="code-block">
           <div class="code-header">
-            <span class="code-label" data-i18n="build.app.label">Compilar la aplicación</span>
+            <span class="code-label" data-i18n="build.app.label">Compilar y ejecutar en desarrollo</span>
             <button class="copy-btn" type="button" data-copy-target="#code-app" data-i18n="build.copy">Copiar</button>
           </div>
-          <pre id="code-app"><code>cmake --preset windows-moonlit-x64
-cmake --build build_moonlit_v1_x64 --config RelWithDebInfo --target obs-studio -- /m:1 /v:minimal</code></pre>
+          <pre id="code-app"><code>pnpm install
+pnpm tauri dev</code></pre>
         </div>
-        <p class="code-hint" data-i18n="build.app.run">La app se ejecuta desde build_moonlit_v1_x64\rundir\RelWithDebInfo\bin\64bit\MoonLit.exe</p>
+        <p class="code-hint" data-i18n="build.app.run">Instala dependencias y arranca la app de escritorio con hot-reload.</p>
 
         <div class="code-block">
           <div class="code-header">
-            <span class="code-label" data-i18n="build.tests.label">Tests</span>
+            <span class="code-label" data-i18n="build.tests.label">Verificación</span>
             <button class="copy-btn" type="button" data-copy-target="#code-tests" data-i18n="build.copy">Copiar</button>
           </div>
-          <pre id="code-tests"><code>cmake --build build_moonlit_v1_x64 --config RelWithDebInfo --target moonlit-tests
-$env:PATH = ".deps\obs-deps-2026-07-15-x64\bin;.deps\obs-deps-qt6-2026-07-15-x64\bin;$env:PATH"
-ctest --test-dir build_moonlit_v1_x64 -C RelWithDebInfo --output-on-failure</code></pre>
+          <pre id="code-tests"><code>cargo check
+cargo test
+pnpm build</code></pre>
         </div>
       </div>
     </section>
@@ -300,17 +318,17 @@ ctest --test-dir build_moonlit_v1_x64 -C RelWithDebInfo --output-on-failure</cod
       <div class="container">
         <h2 class="section-title" data-i18n="docs.title">Documentación y licencia</h2>
         <div class="cards-grid">
-          <a class="card card-link" href="https://github.com/SourisCG/MoonLit/blob/main/docs/moonlit/PROJECT_PLAN.md" target="_blank" rel="noopener">
-            <h3 class="card-title card-mono" data-i18n="docs.plan">docs/moonlit/PROJECT_PLAN.md</h3>
-            <p class="card-text" data-i18n="docs.plan.text">Plan de producto, registro de fases y log de ejecución.</p>
+          <a class="card card-link" href="https://github.com/SourisCG/Moonlit/blob/main/SPEC.md" target="_blank" rel="noopener">
+            <h3 class="card-title card-mono" data-i18n="docs.spec">SPEC.md</h3>
+            <p class="card-text" data-i18n="docs.spec.text">Especificación técnica completa del producto: arquitectura, captura, detección, editor, almacenamiento, integraciones, UI y distribución.</p>
           </a>
-          <a class="card card-link" href="https://github.com/SourisCG/MoonLit/blob/main/docs/moonlit/MANUAL_MATRIX.md" target="_blank" rel="noopener">
-            <h3 class="card-title card-mono" data-i18n="docs.matrix">docs/moonlit/MANUAL_MATRIX.md</h3>
-            <p class="card-text" data-i18n="docs.matrix.text">Matriz de pruebas manuales y procedimiento de firma.</p>
+          <a class="card card-link" href="https://github.com/SourisCG/Moonlit/tree/main/docs" target="_blank" rel="noopener">
+            <h3 class="card-title card-mono" data-i18n="docs.docs">docs/</h3>
+            <p class="card-text" data-i18n="docs.docs.text">Documentación por fases con el progreso real del desarrollo.</p>
           </a>
           <div class="card">
             <h3 class="card-title" data-i18n="docs.license.title">Licencia</h3>
-            <p class="card-text" data-i18n="docs.license.text">MoonLit es software libre bajo la GNU General Public License v2, igual que su base OBS Studio. Los archivos integrados de SQLite y FTS5 están en dominio público.</p>
+            <p class="card-text" data-i18n="docs.license.text">MoonLit es software libre bajo la GNU General Public License v3 (solo) porque su motor de captura en Linux, gpu-screen-recorder, es GPL-3.0-only.</p>
           </div>
         </div>
       </div>
@@ -321,8 +339,8 @@ ctest --test-dir build_moonlit_v1_x64 -C RelWithDebInfo --output-on-failure</cod
   <!-- ============ FOOTER ============ -->
   <footer class="footer">
     <div class="container footer-inner">
-      <span data-i18n="footer.text">MoonLit — software libre bajo GPL v2</span>
-      <a href="https://github.com/SourisCG/MoonLit" target="_blank" rel="noopener" data-i18n="footer.source">Código fuente en GitHub</a>
+      <span data-i18n="footer.text">MoonLit — software libre bajo GPL v3</span>
+      <a href="https://github.com/SourisCG/Moonlit" target="_blank" rel="noopener" data-i18n="footer.source">Código fuente en GitHub</a>
     </div>
   </footer>
 

@@ -9,45 +9,75 @@
   var installerBtn = document.getElementById("btn-installer");
   var portableBtn = document.getElementById("btn-portable");
   var downloadStatus = document.getElementById("download-status");
-  var RELEASES_URL = "https://github.com/SourisCG/MoonLit/releases";
-  var API_URL = "https://api.github.com/repos/SourisCG/MoonLit/releases/latest";
+  var RELEASES_URL = "https://github.com/SourisCG/Moonlit/releases";
+  var API_URL = "https://api.github.com/repos/SourisCG/Moonlit/releases/latest";
+
+  /* Patrones amplios para bundles Tauri + compatibilidad con nombres viejos */
+  var LINUX_PATTERNS = [/\.appimage$/i, /\.deb$/i, /\.rpm$/i];
+  var WINDOWS_PATTERNS = [/\.msi$/i, /setup\.exe$/i, /-setup\.exe$/i, /-x64\.zip$/i];
+
+  function matchAssetByPatterns(assets, patterns) {
+    for (var i = 0; i < assets.length; i++) {
+      var name = (assets[i].name || "").toLowerCase();
+      for (var j = 0; j < patterns.length; j++) {
+        if (patterns[j].test(name)) {
+          return assets[i];
+        }
+      }
+    }
+    return null;
+  }
+
+  function localizedText(es, en) {
+    return document.documentElement.lang === "en" ? en : es;
+  }
+
+  function showComingSoon() {
+    if (downloadStatus) {
+      downloadStatus.textContent = localizedText(
+        "Las descargas de la nueva versión llegarán con la primera release. Mientras tanto, prueba la versión anterior abajo.",
+        "New-version downloads will arrive with the first release. Meanwhile, try the previous version below."
+      );
+      downloadStatus.hidden = false;
+    }
+    if (installerBtn) {
+      installerBtn.href = RELEASES_URL;
+    }
+    if (portableBtn) {
+      portableBtn.href = RELEASES_URL;
+    }
+  }
 
   function applyDownloadButtons(data) {
-    if (!data || !data.assets) {
+    if (!data || !Array.isArray(data.assets) || data.assets.length === 0) {
       return false;
     }
-    var installer = null;
-    var portable = null;
+    var linux = matchAssetByPatterns(data.assets, LINUX_PATTERNS);
+    var windows = matchAssetByPatterns(data.assets, WINDOWS_PATTERNS);
 
-    data.assets.forEach(function (asset) {
-      var name = asset.name || "";
-      if (!installer && /-Setup\.exe$/i.test(name)) {
-        installer = asset;
-      }
-      if (!portable && /-x64\.zip$/i.test(name)) {
-        portable = asset;
-      }
-    });
-
-    if (installer && installerBtn) {
-      installerBtn.href = installer.browser_download_url;
-      installerBtn.setAttribute("download", installer.name);
+    if (linux && installerBtn) {
+      installerBtn.href = linux.browser_download_url;
+      installerBtn.setAttribute("download", linux.name);
+    } else if (installerBtn) {
+      installerBtn.href = RELEASES_URL;
     }
-    if (portable && portableBtn) {
-      portableBtn.href = portable.browser_download_url;
-      portableBtn.setAttribute("download", portable.name);
+    if (windows && portableBtn) {
+      portableBtn.href = windows.browser_download_url;
+      portableBtn.setAttribute("download", windows.name);
+    } else if (portableBtn) {
+      portableBtn.href = RELEASES_URL;
     }
 
     var version = data.tag_name || "";
-    var statusEl = downloadStatus;
-    if (statusEl) {
-      if (version) {
-        var okText = document.documentElement.lang === "en" ? "Direct download of the latest version ({version})" : "Descarga directa de la última versión ({version})";
-        statusEl.textContent = okText.replace("{version}", version);
-      }
-      statusEl.hidden = false;
+    if (downloadStatus && (linux || windows) && version) {
+      var okText = localizedText(
+        "Descarga directa de la última versión ({version})",
+        "Direct download of the latest version ({version})"
+      );
+      downloadStatus.textContent = okText.replace("{version}", version);
+      downloadStatus.hidden = false;
     }
-    return installer || portable;
+    return linux || windows;
   }
 
   if (installerBtn || portableBtn) {
@@ -59,22 +89,14 @@
         return response.json();
       })
       .then(function (data) {
-        if (applyDownloadButtons(data)) {
-          /* los botones ya apuntan al archivo directo */
-        } else if (downloadStatus) {
-          downloadStatus.hidden = true;
+        if (!applyDownloadButtons(data)) {
+          /* sin release o sin assets: aviso de "próximamente" */
+          showComingSoon();
         }
       })
       .catch(function () {
-        if (downloadStatus) {
-          downloadStatus.hidden = true;
-        }
-        if (installerBtn) {
-          installerBtn.href = RELEASES_URL;
-        }
-        if (portableBtn) {
-          portableBtn.href = RELEASES_URL;
-        }
+        /* sin red o API caída: aviso de "próximamente" */
+        showComingSoon();
       });
   }
 
