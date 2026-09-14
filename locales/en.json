@@ -1,6 +1,6 @@
 {
-  "meta.title": "MoonLit — Local-first clip recorder for Linux and Windows",
-  "meta.description": "MoonLit is a local-first clip recorder for Linux and Windows. A Medal.tv-style alternative with zero cloud: replay buffer, lightweight editor and sharing through your own storage. Open source and 100% local.",
+  "meta.title": "MoonClip — Local-first clip recorder for Linux and Windows",
+  "meta.description": "MoonClip is a local-first clip recorder for Linux and Windows. A Medal.tv-style alternative with zero cloud: replay buffer, lightweight editor and sharing through your own storage. Open source and 100% local.",
 
   "nav.features": "Features",
   "nav.inspiration": "Inspiration",
@@ -25,10 +25,10 @@
   "hero.download.checking": "Looking for the latest version...",
   "hero.download.ok": "Direct download of the latest version ({version})",
   "hero.download.coming": "New-version downloads will arrive with the first release. Meanwhile, try the previous version below.",
-  "hero.wip": "MoonLit is under active development: it is a young project and may contain bugs.",
+  "hero.wip": "MoonClip is under active development: it is a young project and may contain bugs.",
 
   "deprecated.title": "Meanwhile: previous Windows version",
-  "deprecated.text": "The new version is under development. You can try MoonLit 0.1.7 (Windows, OBS Studio based), the latest published in the old repository:",
+  "deprecated.text": "The new version is under development. You can try MoonClip 0.1.7 (Windows, OBS Studio based), the latest published in the old repository:",
   "deprecated.setup": "Installer 0.1.7",
   "deprecated.portable": "Portable 0.1.7",
   "deprecated.repo": "View repository",
@@ -62,7 +62,7 @@
   "features.editor.text": "Timeline editor (trim, vertical and remix) and publishing to your own storage (Google Drive) and webhooks. Planned for later phases.",
 
   "inspiration.title": "Inspired by Medal.tv's idea",
-  "inspiration.text": "Medal.tv popularized the idea of saving clips from your matches with a single touch. MoonLit takes that same idea and turns it into a similar open-source program: like Office and LibreOffice, same idea, different philosophy.",
+  "inspiration.text": "Medal.tv popularized the idea of saving clips from your matches with a single touch. MoonClip takes that same idea and turns it into a similar open-source program: like Office and LibreOffice, same idea, different philosophy.",
   "inspiration.local.title": "100% local",
   "inspiration.local.text": "Your clips live on your disk, not in a cloud.",
   "inspiration.opensource.title": "Open source",
@@ -93,7 +93,7 @@
   "usage.gallery.text": "Thumbnails with real durations, search and delete. All local and instant.",
   "usage.settings.title": "Settings",
   "usage.settings.text": "Monitor selection, 30/60 fps, encoding quality, per-track gains and keyring credentials.",
-  "usage.ui.title": "MoonLit interface",
+  "usage.ui.title": "MoonClip interface",
   "usage.ui.text": "Frameless UI with its own theme, bilingual (ES/EN).",
 
   "data.title": "Data locations",
@@ -125,9 +125,9 @@
   "docs.docs": "docs/",
   "docs.docs.text": "Phase-by-phase documentation with the real development progress.",
   "docs.license.title": "License",
-  "docs.license.text": "MoonLit is free software under the GNU General Public License v3 (only).",
+  "docs.license.text": "MoonClip is free software under the GNU General Public License v3 (only).",
 
-  "footer.text": "MoonLit — free software under GPL v3",
-  "footer.repo.new": "MoonLit (current)",
-  "footer.repo.old": "MoonLit 0.1.7 (deprecated)"
+  "footer.text": "MoonClip — free software under GPL v3",
+  "footer.repo.new": "MoonClip (current)",
+  "footer.repo.old": "MoonClip 0.1.7 (deprecated)"
 }

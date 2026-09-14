@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Genera favicon.ico (y favicon.png) con el logo MoonLit: luna + play, rojo -> azul."""
+"""Genera favicon.ico (y favicon.png) con el logo MoonClip: luna + play, rojo -> azul."""
 import math
 import os
 

@@ -1,19 +1,19 @@
-# MoonLit-Page
+# MoonClip-Page
 
-Página de presentación de **MoonLit**, el grabador de clips local-first para Linux y Windows (app Tauri v2 + React, GPL-3.0).
+Página de presentación de **MoonClip**, el grabador de clips local-first para Linux y Windows (app Tauri v2 + React, GPL-3.0).
 
 Web estática: HTML + CSS + JavaScript plano. Sin frameworks, sin build tools y sin dependencias.
 
-Publicada en **https://moonlit.souriscg.dev** (GitHub Pages + dominio personalizado).
+Publicada en **https://moonclip.souriscg.dev** (GitHub Pages + dominio personalizado).
 
-> La página describe la app nueva del repo [`SourisCG/Moonlit`](https://github.com/SourisCG/Moonlit). La versión anterior (0.1.7, Windows, basada en OBS Studio) sigue descargable desde [`SourisCG/MoonLit-Deprecated`](https://github.com/SourisCG/MoonLit-Deprecated) y tiene su propio aviso en el hero.
+> La página describe la app nueva del repo [`SourisCG/Moonclip`](https://github.com/SourisCG/Moonclip). La versión anterior (0.1.7, Windows, basada en OBS Studio) sigue descargable desde [`SourisCG/MoonClip-Deprecated`](https://github.com/SourisCG/MoonClip-Deprecated) y tiene su propio aviso en el hero.
 
 ## Estructura de carpetas
 
 ```
-MoonLit-Page/
+MoonClip-Page/
 ├── index.html              ← La página (todo el contenido está aquí)
-├── CNAME                   ← Dominio personalizado (moonlit.souriscg.dev)
+├── CNAME                   ← Dominio personalizado (moonclip.souriscg.dev)
 ├── assets/
 │   ├── css/
 │   │   ├── main.css        ← Colores, fuentes y estilos base
@@ -72,11 +72,11 @@ Para probar la detección: cambia el idioma del navegador a inglés (o borra los
 
 ## Descarga directa y versión deprecated
 
-- Al cargar, `main.js` consulta la API de GitHub (`SourisCG/Moonlit/releases/latest`) y, si hay assets, apunta los botones del hero al archivo directo: **Linux** busca `.AppImage`, `.deb` o `.rpm`; **Windows** busca `setup.exe` o `.msi` (con compatibilidad para los nombres viejos `-Setup.exe` y `-x64.zip`).
+- Al cargar, `main.js` consulta la API de GitHub (`SourisCG/Moonclip/releases/latest`) y, si hay assets, apunta los botones del hero al archivo directo: **Linux** busca `.AppImage`, `.deb` o `.rpm`; **Windows** busca `setup.exe` o `.msi` (con compatibilidad para los nombres viejos `-Setup.exe` y `-x64.zip`).
 - Si no hay release o la API falla, los botones llevan a la página de Releases y se muestra el aviso de "próximamente" (`hero.download.coming`).
 - El bloque **deprecated** del hero (clases `.deprecated-note` / `.btn-deprecated` en `components.css`) enlaza directo a la 0.1.7 del repo antiguo:
-  - Instalador: `https://github.com/SourisCG/MoonLit-Deprecated/releases/download/0.1.7/MoonLit-0.1.7-Setup.exe`
-  - Portable: `https://github.com/SourisCG/MoonLit-Deprecated/releases/download/0.1.7/MoonLit-0.1.7-x64.zip`
+  - Instalador: `https://github.com/SourisCG/MoonClip-Deprecated/releases/download/0.1.7/MoonLit-0.1.7-Setup.exe`
+  - Portable: `https://github.com/SourisCG/MoonClip-Deprecated/releases/download/0.1.7/MoonLit-0.1.7-x64.zip`
 - El aviso de SmartScreen vive dentro de ese bloque (claves `deprecated.smartscreen.*`), porque solo aplica a la 0.1.7 con certificado autofirmado.
 - Las tarjetas de características llevan insignia de estado (`Disponible` / `En camino` / `Planeado`, clases `.status-available` / `.status-wip` / `.status-planned`).
 
@@ -109,18 +109,18 @@ Si cambias el diseño del logo (o sus colores), edita las proporciones y los col
 3. En **Source** elige *Deploy from a branch*, rama `main`, carpeta `/ (root)`.
 4. Guarda. La página quedará publicada en `https://TU-USUARIO.github.io/NOMBRE-DEL-REPO`.
 
-### Dominio personalizado (moonlit.souriscg.dev)
+### Dominio personalizado (moonclip.souriscg.dev)
 
 El dominio ya está configurado, pero si algún día hay que rehacerlo:
 
-1. El repo tiene un archivo `CNAME` en la raíz con el texto `moonlit.souriscg.dev`.
+1. El repo tiene un archivo `CNAME` en la raíz con el texto `moonclip.souriscg.dev`.
 2. En el registrador de `souriscg.dev` hay que crear un registro DNS:
 
    | Tipo  | Nombre    | Valor                |
    |-------|-----------|----------------------|
-   | CNAME | `moonlit` | `souriscg.github.io` |
+   | CNAME | `moonclip` | `souriscg.github.io` |
 
-3. En **Settings → Pages → Custom domain** escribe `moonlit.souriscg.dev` y guarda.
+3. En **Settings → Pages → Custom domain** escribe `moonclip.souriscg.dev` y guarda.
 4. Cuando el DNS verifique, activa **Enforce HTTPS**.
 
 Como todos los enlaces son relativos, la página funciona igual en el dominio propio que en `usuario.github.io/repo`.

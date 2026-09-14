@@ -9,8 +9,8 @@
   var installerBtn = document.getElementById("btn-installer");
   var portableBtn = document.getElementById("btn-portable");
   var downloadStatus = document.getElementById("download-status");
-  var RELEASES_URL = "https://github.com/SourisCG/Moonlit/releases";
-  var API_URL = "https://api.github.com/repos/SourisCG/Moonlit/releases/latest";
+  var RELEASES_URL = "https://github.com/SourisCG/Moonclip/releases";
+  var API_URL = "https://api.github.com/repos/SourisCG/Moonclip/releases/latest";
 
   /* Patrones amplios para bundles Tauri + compatibilidad con nombres viejos */
   var LINUX_PATTERNS = [/\.appimage$/i, /\.deb$/i, /\.rpm$/i];
